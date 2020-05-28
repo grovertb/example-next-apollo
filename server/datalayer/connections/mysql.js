@@ -2,7 +2,7 @@ import Sequelize from 'sequelize'
 
 import Products from '../models/products'
 
-const cnn = new Sequelize(process.env.DB_CONNECTION, {
+const cnn = new Sequelize(process.env.JAWSDB_URL, {
   dialect: 'mysql'
 })
 
