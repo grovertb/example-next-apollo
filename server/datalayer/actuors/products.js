@@ -6,13 +6,13 @@ const getById = async (id) => {
 
   return product
 }
-
-const getProducts = async (name) => {
-  if(name)
-    return await ProductsModel.findAll({ where: { name: { [Op.substring]: `%${name}` } } })
-
-  return []
-}
+const getProducts = async search =>
+  search ?
+    await ProductsModel.findAll({
+      attributes: ['id', 'name', 'photo', 'price', 'stock'],
+      where     : { name: { [Op.substring]: search.toLowerCase() } }
+    }) :
+    []
 
 export default {
   getById,

@@ -2,11 +2,13 @@ import Sequelize from 'sequelize'
 
 import Products from '../models/products'
 
-const cnn = new Sequelize(process.env.JAWSDB_URL, {
+export const sequelize = new Sequelize(process.env.JAWSDB_URL, {
   dialect: 'mysql'
 })
 
-cnn
+const ProductsModel = Products(sequelize, Sequelize)
+
+sequelize
   .authenticate()
   .then(() => {
     console.log('Connection has been established successfully.')
@@ -15,4 +17,6 @@ cnn
     console.error('Unable to connect to the database:', err)
   })
 
-export const ProductsModel = Products(cnn, Sequelize)
+export {
+  ProductsModel
+}

@@ -62,6 +62,13 @@
     "comma-style": [2, "last"],
     "curly": [2, "multi", "consistent"],
     "eol-last": 2,
-    "wrap-iife": 2
+    "wrap-iife": 2,
+    "object-curly-spacing": ["error", "always"],
+    "key-spacing": [
+      "error",
+      {
+        "align": "colon"
+      }
+    ]
   }
 }

@@ -5,7 +5,7 @@ require('@babel/register')({
     '@babel/preset-env'
   ],
   'plugins': [ '@babel/plugin-transform-runtime' ],
-  ignore: [ /node_modules/]
+  ignore   : [ /node_modules/]
 })
 
 require('./server')

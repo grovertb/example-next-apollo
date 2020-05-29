@@ -1,5 +1,5 @@
-export default (cnn, DataType) =>
-  cnn.define('products', {
+export default (sequelize, DataType) =>
+  sequelize.define('products', {
     id: {
       type: DataType.INTEGER,
       primaryKey: true,
